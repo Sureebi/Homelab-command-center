@@ -1,0 +1,591 @@
+.minecraft-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mc-hero,
+.mc-control-panel,
+.mc-stat-card,
+.mc-status-strip,
+.mc-error {
+  border: 1px solid var(--border, rgba(255,255,255,.08));
+  background: var(--panel, rgba(15,20,27,.82));
+}
+
+.mc-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px;
+  border-radius: 18px;
+}
+
+.mc-kicker,
+.mc-control-head span,
+.mc-stat-head span,
+.mc-status-strip span {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  opacity: .58;
+}
+
+.mc-hero h1 {
+  margin: 7px 0;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1;
+}
+
+.mc-hero p {
+  margin: 0;
+  opacity: .65;
+}
+
+.mc-state {
+  min-width: 165px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+}
+
+.mc-state span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .12em;
+  opacity: .55;
+}
+
+.mc-state strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.mc-state.online,
+.good {
+  color: #70e6be;
+}
+
+.mc-state.offline,
+.bad {
+  color: #ff7777;
+}
+
+.mc-status-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.mc-status-strip > div {
+  padding: 17px;
+  border-right: 1px solid rgba(255,255,255,.07);
+}
+
+.mc-status-strip > div:last-child {
+  border-right: 0;
+}
+
+.mc-status-strip strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.mc-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mc-stat-card {
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.mc-stat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mc-stat-card > strong {
+  display: block;
+  margin-top: 22px;
+  font-size: 28px;
+  letter-spacing: -.04em;
+}
+
+.mc-stat-card small {
+  display: block;
+  margin-top: 8px;
+  opacity: .5;
+}
+
+.mc-control-panel {
+  padding: 22px;
+  border-radius: 16px;
+}
+
+.mc-control-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mc-control-head h2 {
+  margin: 5px 0 0;
+  font-size: 18px;
+}
+
+.mc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.mc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 11px;
+  background: rgba(255,255,255,.05);
+  color: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  cursor: pointer;
+}
+
+.mc-button:hover:not(:disabled) {
+  background: rgba(255,255,255,.09);
+}
+
+.mc-button.success {
+  border-color: rgba(112,230,190,.35);
+  color: #70e6be;
+}
+
+.mc-button.danger {
+  border-color: rgba(255,119,119,.35);
+  color: #ff7777;
+}
+
+.mc-button:disabled {
+  cursor: not-allowed;
+  opacity: .35;
+}
+
+.mc-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  color: #ffb36b;
+}
+
+.mc-error strong,
+.mc-error span {
+  display: block;
+}
+
+.mc-error span {
+  margin-top: 3px;
+  font-size: 11px;
+  opacity: .7;
+}
+
+.mc-spin {
+  animation: mc-spin 1s linear infinite;
+}
+
+@keyframes mc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1050px) {
+  .mc-stat-grid,
+  .mc-status-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .mc-hero {
+    flex-direction: column;
+  }
+
+  .mc-state {
+    width: 100%;
+  }
+
+  .mc-stat-grid,
+  .mc-status-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .mc-status-strip > div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  .mc-actions {
+    flex-direction: column;
+  }
+
+  .mc-button {
+    width: 100%;
+  }
+}
+
+
+/* ======================================================
+   MINECRAFT DETAILS
+   ====================================================== */
+
+.mc-info-strip {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  border: 1px solid
+    var(--border, rgba(255,255,255,.08));
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    var(--panel, rgba(15,20,27,.82));
+}
+
+.mc-info-strip > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px 18px;
+  border-right:
+    1px solid rgba(255,255,255,.07);
+}
+
+.mc-info-strip > div:last-child {
+  border-right: 0;
+}
+
+.mc-info-strip span {
+  display: block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  opacity: .48;
+}
+
+.mc-info-strip strong {
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+
+/* ======================================================
+   CRAFTY CONSOLE
+   ====================================================== */
+
+.mc-console-panel {
+  overflow: hidden;
+  border: 1px solid
+    var(--border, rgba(255,255,255,.08));
+  border-radius: 16px;
+  background:
+    var(--panel, rgba(15,20,27,.82));
+}
+
+.mc-console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 19px 21px;
+  border-bottom:
+    1px solid rgba(255,255,255,.07);
+}
+
+.mc-console-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mc-console-title span {
+  display: block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  opacity: .5;
+}
+
+.mc-console-title h2 {
+  margin: 4px 0 0;
+  font-size: 18px;
+}
+
+.mc-console-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mc-console-meta > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+
+.mc-console-meta > span i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.mc-console-meta .live {
+  color: #70e6be;
+}
+
+.mc-console-meta .paused {
+  color: #ffbf69;
+}
+
+.mc-console-meta small {
+  font-size: 10px;
+  opacity: .45;
+}
+
+.mc-console-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom:
+    1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.018);
+}
+
+.mc-console-toolbar button,
+.mc-console-toolbar label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid
+    rgba(255,255,255,.07);
+  border-radius: 8px;
+  background: rgba(255,255,255,.025);
+  color: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.mc-console-toolbar button {
+  cursor: pointer;
+}
+
+.mc-console-toolbar button:hover:not(:disabled) {
+  background: rgba(255,255,255,.07);
+}
+
+.mc-console-toolbar button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.mc-console-toolbar label {
+  cursor: pointer;
+}
+
+.mc-console-toolbar input {
+  accent-color: #70e6be;
+}
+
+.mc-console-output {
+  height: 390px;
+  overflow-y: auto;
+  padding: 15px 17px;
+  background:
+    rgba(3, 6, 9, .72);
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  font-size: 11px;
+  line-height: 1.65;
+  scrollbar-width: thin;
+}
+
+.mc-console-line {
+  min-height: 18px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: rgba(232,238,244,.78);
+}
+
+.mc-console-line.info {
+  color: rgba(216,233,241,.82);
+}
+
+.mc-console-line.warn {
+  color: #ffc56d;
+}
+
+.mc-console-line.error {
+  color: #ff7777;
+}
+
+.mc-console-error {
+  padding: 10px;
+  border: 1px solid
+    rgba(255,119,119,.22);
+  border-radius: 8px;
+  color: #ff7777;
+  background:
+    rgba(255,119,119,.05);
+}
+
+.mc-console-empty {
+  opacity: .35;
+}
+
+.mc-console-input {
+  display: grid;
+  grid-template-columns:
+    auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border-top:
+    1px solid rgba(255,255,255,.07);
+  background:
+    rgba(255,255,255,.018);
+}
+
+.mc-console-input > span {
+  color: #70e6be;
+  font-family: monospace;
+  font-weight: 800;
+}
+
+.mc-console-input input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid
+    rgba(255,255,255,.08);
+  border-radius: 9px;
+  outline: none;
+  background:
+    rgba(0,0,0,.22);
+  color: inherit;
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+  font-size: 11px;
+}
+
+.mc-console-input input:focus {
+  border-color:
+    rgba(112,230,190,.4);
+}
+
+.mc-console-input input:disabled {
+  opacity: .4;
+}
+
+.mc-console-input button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid
+    rgba(112,230,190,.28);
+  border-radius: 9px;
+  background:
+    rgba(112,230,190,.06);
+  color: #70e6be;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  cursor: pointer;
+}
+
+.mc-console-input button:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 1050px) {
+  .mc-info-strip {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 650px) {
+  .mc-info-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .mc-info-strip > div {
+    border-right: 0;
+    border-bottom:
+      1px solid rgba(255,255,255,.07);
+  }
+
+  .mc-console-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mc-console-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .mc-console-output {
+    height: 320px;
+  }
+
+  .mc-console-input {
+    grid-template-columns:
+      auto 1fr;
+  }
+
+  .mc-console-input button {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+}

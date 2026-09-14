@@ -1,0 +1,2204 @@
+/* =====================================================================
+   SUREEPI STORAGE V12
+   Complete visual pass for Overview / Activity / Logs
+   Designed to match the main System Command Deck.
+   ===================================================================== */
+
+
+/* =====================================================================
+   STORAGE PAGE SHELL
+   ===================================================================== */
+
+.storage-page {
+  width: 100%;
+  min-width: 0;
+  animation: storagePageIn 320ms ease both;
+}
+
+.storage-page-header {
+  min-height: 118px;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 24px !important;
+
+  margin-bottom: 12px !important;
+  padding: 20px 22px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #11171a,
+      #0c1114
+    ) !important;
+
+  border:
+    3px solid var(--panel-border, var(--border)) !important;
+
+  border-radius: 15px !important;
+}
+
+.storage-page-header .eyebrow {
+  display: block;
+
+  color: var(--accent) !important;
+
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+}
+
+.storage-page-header h1 {
+  margin: 7px 0 5px !important;
+
+  color: var(--text) !important;
+
+  font-size: clamp(31px, 2.35vw, 40px) !important;
+  line-height: 1 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.storage-page-header p {
+  margin: 0 !important;
+
+  color: #b5c0b9 !important;
+
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.storage-page-status {
+  flex: 0 0 auto;
+
+  min-height: 38px;
+
+  padding: 0 13px !important;
+
+  font-size: 11px !important;
+  letter-spacing: 0.05em !important;
+}
+
+
+/* =====================================================================
+   STORAGE SUB NAV
+   ===================================================================== */
+
+.storage-tabs {
+  width: fit-content !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+
+  gap: 5px !important;
+
+  margin: 0 0 14px !important;
+  padding: 5px !important;
+
+  background:
+    rgba(12, 17, 20, 0.96) !important;
+
+  border:
+    2px solid var(--panel-border, var(--border)) !important;
+
+  border-radius: 11px !important;
+}
+
+.storage-tab {
+  min-width: 110px;
+  min-height: 42px !important;
+
+  justify-content: center !important;
+
+  gap: 8px !important;
+
+  padding: 0 14px !important;
+
+  color: #aeb8b1 !important;
+
+  font-size: 12px !important;
+  font-weight: 750 !important;
+
+  border:
+    1px solid transparent !important;
+
+  border-radius: 8px !important;
+
+  transition:
+    color 150ms ease,
+    background 150ms ease,
+    border-color 150ms ease,
+    transform 150ms ease !important;
+}
+
+.storage-tab svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.storage-tab:hover {
+  color: #eef3ef !important;
+
+  background:
+    rgba(255, 255, 255, 0.02) !important;
+}
+
+.storage-tab.active {
+  color: #f1f5f2 !important;
+
+  background:
+    rgba(128, 210, 146, 0.105) !important;
+
+  border-color:
+    rgba(128, 210, 146, 0.33) !important;
+}
+
+.storage-tab.active svg {
+  color: var(--accent) !important;
+}
+
+
+/* =====================================================================
+   SHARED TOP STAT CARDS
+   ===================================================================== */
+
+.storage-overview-stats,
+.storage-activity-stats,
+.storage-log-stats {
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr)) !important;
+
+  gap: 12px !important;
+
+  margin-bottom: 14px !important;
+}
+
+.storage-overview-stat,
+.storage-activity-stat,
+.storage-log-stat {
+  position: relative;
+
+  min-width: 0;
+  min-height: 88px;
+
+  padding: 15px 16px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #11171a,
+      #0c1114
+    ) !important;
+
+  border:
+    2px solid var(--panel-border, var(--border)) !important;
+
+  border-radius: 11px !important;
+
+  overflow: hidden;
+
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease,
+    background 150ms ease !important;
+}
+
+.storage-overview-stat::after,
+.storage-activity-stat::after,
+.storage-log-stat::after {
+  content: "";
+
+  position: absolute;
+
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent),
+      transparent 72%
+    );
+
+  opacity: 0.35;
+}
+
+.storage-overview-stat > span,
+.storage-activity-stat > span,
+.storage-log-stat > span {
+  display: block !important;
+
+  color: #a7b2ab !important;
+
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.055em !important;
+}
+
+.storage-overview-stat > strong,
+.storage-activity-stat > strong,
+.storage-log-stat > strong {
+  display: block !important;
+
+  margin-top: 8px !important;
+
+  color: #f0f4f1 !important;
+
+  font-size: clamp(20px, 1.55vw, 25px) !important;
+  line-height: 1 !important;
+  font-weight: 780 !important;
+}
+
+.storage-log-stat > small {
+  display: block !important;
+
+  margin-top: 7px !important;
+
+  color: #88948d !important;
+
+  font-size: 10px !important;
+  font-weight: 600 !important;
+}
+
+.log-stat-created {
+  color: #86d998 !important;
+}
+
+.log-stat-moved {
+  color: #d8ba66 !important;
+}
+
+.log-stat-deleted {
+  color: #df777b !important;
+}
+
+
+/* =====================================================================
+   OVERVIEW TAB
+   ===================================================================== */
+
+.storage-overview-grid {
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr)) !important;
+
+  gap: 14px !important;
+}
+
+.storage-overview-grid > .panel {
+  min-width: 0;
+
+  padding: 19px 20px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #11171a,
+      #0c1114
+    ) !important;
+
+  border:
+    3px solid var(--panel-border, var(--border)) !important;
+
+  border-radius: 13px !important;
+
+  box-shadow: none !important;
+}
+
+.storage-overview-grid .panel-header {
+  min-height: 55px;
+
+  padding-bottom: 14px !important;
+}
+
+.storage-overview-grid .panel-label {
+  color: #a8b2ac !important;
+
+  font-size: 10px !important;
+  font-weight: 800 !important;
+}
+
+.storage-overview-grid .panel-header h2 {
+  margin-top: 5px !important;
+
+  color: #f0f4f1 !important;
+
+  font-size: 17px !important;
+  font-weight: 760 !important;
+}
+
+.storage-overview-grid .panel-header svg {
+  width: 18px;
+  height: 18px;
+
+  color: #909c95 !important;
+}
+
+.storage-info-list {
+  padding-top: 5px !important;
+}
+
+.storage-info-row {
+  min-height: 46px;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(110px, 0.55fr)
+    minmax(0, 1.45fr) !important;
+
+  align-items: center !important;
+
+  gap: 18px !important;
+
+  padding: 10px 2px !important;
+
+  border-bottom:
+    1px solid rgba(69, 82, 74, 0.68) !important;
+}
+
+.storage-info-row:last-child {
+  border-bottom: 0 !important;
+}
+
+.storage-info-row span {
+  color: #9ea9a2 !important;
+
+  font-size: 11px !important;
+  font-weight: 750 !important;
+}
+
+.storage-info-row strong {
+  min-width: 0;
+
+  overflow: hidden;
+
+  color: #e5ebe7 !important;
+
+  font-family: var(--mono) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+
+  text-align: right;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =====================================================================
+   ACTIVITY TAB
+   ===================================================================== */
+
+.storage-activity-detail-panel {
+  min-height: 0 !important;
+  height: auto !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  margin-bottom: 14px !important;
+  padding: 19px 20px 0 !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #11171a,
+      #0c1114
+    ) !important;
+
+  border:
+    3px solid var(--panel-border, var(--border)) !important;
+
+  border-radius: 13px !important;
+
+  overflow: hidden !important;
+}
+
+.storage-activity-detail-panel:last-child {
+  margin-bottom: 0 !important;
+}
+
+.storage-activity-detail-panel .panel-header {
+  min-height: 56px;
+
+  flex: 0 0 auto;
+
+  padding-bottom: 14px !important;
+}
+
+.storage-activity-detail-panel .panel-label {
+  color: #a7b2ab !important;
+
+  font-size: 10px !important;
+  font-weight: 800 !important;
+}
+
+.storage-activity-detail-panel .panel-header h2 {
+  margin-top: 5px !important;
+
+  color: #f0f4f1 !important;
+
+  font-size: 17px !important;
+  font-weight: 760 !important;
+}
+
+.storage-activity-detail-panel .panel-header svg {
+  width: 18px;
+  height: 18px;
+
+  color: #95a199 !important;
+}
+
+
+/* Actual graph area — fixes the giant empty card */
+
+.storage-detail-graph-wrap {
+  position: relative;
+
+  height: 218px !important;
+  min-height: 218px !important;
+
+  display: flex;
+  align-items: stretch;
+
+  margin: 14px 0 0 !important;
+
+  overflow: hidden;
+
+  background-color:
+    #090e10 !important;
+
+  background-image:
+    linear-gradient(
+      rgba(128, 210, 146, 0.034) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(128, 210, 146, 0.024) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size:
+    100% 44px,
+    76px 100% !important;
+
+  border:
+    1px solid #344039 !important;
+
+  border-radius: 8px !important;
+}
+
+.storage-detail-graph-wrap::before {
+  content: "LIVE TELEMETRY";
+
+  position: absolute;
+
+  left: 12px;
+  top: 10px;
+
+  z-index: 2;
+
+  color: rgba(174, 190, 180, 0.55);
+
+  font-family: var(--mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  pointer-events: none;
+}
+
+.storage-detail-graph-wrap::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 24%;
+
+  height: 1px;
+
+  background:
+    rgba(128, 210, 146, 0.13);
+
+  pointer-events: none;
+}
+
+.storage-detail-graph {
+  position: relative;
+  z-index: 1;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  padding: 20px 10px 9px;
+
+  overflow: visible;
+}
+
+.storage-detail-graph polyline {
+  fill: none !important;
+
+  stroke: var(--accent) !important;
+  stroke-width: 2 !important;
+
+  vector-effect: non-scaling-stroke;
+
+  filter: none !important;
+}
+
+.storage-detail-graph.write polyline {
+  stroke:
+    #8dc69a !important;
+}
+
+.storage-graph-empty {
+  width: 100%;
+
+  display: grid;
+  place-items: center;
+
+  color: #89948d;
+
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+
+/* Four stat cells attached to the bottom of each graph card */
+
+.storage-detail-footer {
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr)) !important;
+
+  margin:
+    14px -20px 0 !important;
+
+  border-top:
+    1px solid #39453e !important;
+}
+
+.storage-detail-footer > div {
+  min-width: 0;
+
+  padding:
+    13px 15px 14px !important;
+
+  background:
+    rgba(8, 13, 15, 0.42);
+}
+
+.storage-detail-footer > div + div {
+  border-left:
+    1px solid #354039;
+}
+
+.storage-detail-footer span {
+  display: block !important;
+
+  color: #9da8a1 !important;
+
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.storage-detail-footer strong {
+  display: block !important;
+
+  overflow: hidden;
+
+  margin-top: 6px !important;
+
+  color: #edf2ef !important;
+
+  font-size: 14px !important;
+  font-weight: 750 !important;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =====================================================================
+   LOGS TAB
+   ===================================================================== */
+
+.storage-logs-tab {
+  min-width: 0;
+}
+
+.storage-terminal {
+  width: 100% !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0d1215,
+      #090e10
+    ) !important;
+
+  border:
+    3px solid var(--panel-border, var(--border)) !important;
+
+  border-radius: 13px !important;
+
+  overflow: hidden !important;
+}
+
+.storage-terminal-header {
+  min-height: 70px !important;
+
+  padding: 13px 15px !important;
+
+  background:
+    #0f1518 !important;
+
+  border-bottom:
+    1px solid #38433d !important;
+}
+
+.storage-terminal-title {
+  gap: 10px !important;
+}
+
+.terminal-live-dot {
+  width: 7px !important;
+  height: 7px !important;
+
+  flex: 0 0 7px;
+
+  background: var(--accent) !important;
+
+  border-radius: 50%;
+}
+
+.terminal-live-dot.paused {
+  background: #d7b65e !important;
+}
+
+.storage-terminal-title > div > span {
+  color: #eff4f0 !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.025em;
+}
+
+.storage-terminal-title small {
+  margin-top: 4px !important;
+
+  color: #9ca79f !important;
+
+  font-size: 10px !important;
+}
+
+.storage-terminal-controls {
+  gap: 8px !important;
+}
+
+.terminal-filter,
+.terminal-control-button {
+  min-height: 36px !important;
+
+  padding:
+    0 10px !important;
+
+  color: #d0d8d3 !important;
+  background: #0b1013 !important;
+
+  border:
+    1px solid #3b4740 !important;
+
+  border-radius: 7px !important;
+
+  font-family: var(--mono) !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+}
+
+.terminal-control-button:hover,
+.terminal-filter:hover {
+  border-color:
+    #56665c !important;
+}
+
+.terminal-control-button.resume {
+  color: var(--accent) !important;
+}
+
+
+/* THE IMPORTANT FIX:
+   JSX has 6 fields, therefore both header and rows must have 6 columns. */
+
+.storage-terminal-columns,
+.storage-terminal-row {
+  grid-template-columns:
+    50px
+    118px
+    110px
+    minmax(270px, 1.7fr)
+    minmax(185px, 0.9fr)
+    90px !important;
+}
+
+.storage-terminal-columns {
+  display: grid !important;
+
+  gap: 12px !important;
+
+  padding:
+    10px 15px !important;
+
+  color: #7f8b84 !important;
+  background: #090e10 !important;
+
+  border-bottom:
+    1px solid #344039 !important;
+
+  font-family: var(--mono);
+  font-size: 8px !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.055em !important;
+}
+
+.storage-terminal-body {
+  max-height:
+    470px !important;
+
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+}
+
+.storage-terminal-row {
+  position: relative;
+
+  display: grid !important;
+
+  gap: 12px !important;
+
+  align-items: center !important;
+
+  min-width: 960px;
+  min-height: 68px !important;
+
+  padding:
+    9px 15px !important;
+
+  border-bottom:
+    1px solid rgba(56, 68, 61, 0.58) !important;
+}
+
+.storage-terminal-row:hover {
+  background:
+    rgba(128, 210, 146, 0.025) !important;
+}
+
+.storage-terminal-row.new-event {
+  background:
+    rgba(128, 210, 146, 0.035);
+}
+
+.storage-terminal-row.new-event::before {
+  left: 0 !important;
+  top: 8px !important;
+  bottom: 8px !important;
+
+  width: 3px !important;
+
+  background: var(--accent) !important;
+}
+
+.terminal-index {
+  color: #89958e;
+
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.terminal-time {
+  color: #a9b4ad !important;
+
+  font-family: var(--mono) !important;
+  font-size: 9px !important;
+  font-weight: 650;
+}
+
+.terminal-event-cell {
+  min-width: 0;
+}
+
+.terminal-event {
+  display: inline-flex !important;
+  align-items: center;
+
+  gap: 4px;
+
+  padding:
+    4px 7px !important;
+
+  font-size: 8px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.035em;
+}
+
+.terminal-event-created {
+  color: #82d994 !important;
+}
+
+.terminal-event-moved {
+  color: #d5b75e !important;
+}
+
+.terminal-event-deleted {
+  color: #e07579 !important;
+}
+
+.terminal-file {
+  min-width: 0;
+}
+
+.terminal-file strong {
+  display: block !important;
+
+  overflow: hidden;
+
+  color: #edf2ef !important;
+
+  font-size: 11px !important;
+  font-weight: 760 !important;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.terminal-path,
+.terminal-destination {
+  display: block !important;
+
+  overflow: hidden;
+
+  margin-top: 3px !important;
+
+  color: #84918a !important;
+
+  font-family: var(--mono);
+  font-size: 8px !important;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.terminal-destination {
+  color: #9aad9f !important;
+}
+
+.terminal-source {
+  min-width: 0;
+
+  display: block !important;
+
+  margin: 0 !important;
+}
+
+.terminal-source-content {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.source-badge {
+  flex: 0 0 auto;
+
+  padding:
+    3px 6px !important;
+
+  font-size: 7px !important;
+  font-weight: 850 !important;
+}
+
+.source-user,
+.source-ip {
+  min-width: 0;
+
+  overflow: hidden;
+
+  color: #909c95 !important;
+
+  font-family: var(--mono) !important;
+  font-size: 8px !important;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source-ip::before {
+  content: "•";
+  margin-right: 5px;
+
+  color: #536057;
+}
+
+.terminal-size {
+  justify-self: end !important;
+
+  color: #c8d1cb !important;
+
+  font-family: var(--mono) !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+
+  white-space: nowrap;
+}
+
+.mobile-terminal-label {
+  display: none;
+}
+
+.terminal-empty {
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #939f98;
+
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.terminal-empty > span {
+  color: var(--accent);
+}
+
+.terminal-empty.error {
+  color: #db777b;
+}
+
+.storage-terminal-footer {
+  min-height: 43px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 14px !important;
+
+  padding:
+    9px 15px !important;
+
+  color: #8f9b94 !important;
+  background: #0b1013 !important;
+
+  border-top:
+    1px solid #354039 !important;
+
+  font-family: var(--mono) !important;
+  font-size: 9px !important;
+}
+
+.storage-terminal-footer strong {
+  color: #d5ddd8 !important;
+}
+
+.terminal-footer-right {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.terminal-footer-right > span:first-child {
+  color: var(--accent);
+
+  font-weight: 800;
+}
+
+.terminal-footer-right > span:first-child.paused {
+  color: #d7b65e;
+}
+
+
+/* =====================================================================
+   HOVER
+   ===================================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .storage-overview-stat:hover,
+  .storage-activity-stat:hover,
+  .storage-log-stat:hover {
+    transform:
+      translateY(-2px);
+
+    border-color:
+      #59675f !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        #151b1f,
+        #101518
+      ) !important;
+  }
+
+  .storage-overview-grid > .panel:hover,
+  .storage-activity-detail-panel:hover {
+    border-color:
+      #56655c !important;
+  }
+
+}
+
+
+/* =====================================================================
+   RESPONSIVE — LARGE TABLET / SMALL DESKTOP
+   ===================================================================== */
+
+@media (max-width: 1250px) {
+
+  .storage-overview-stats,
+  .storage-activity-stats,
+  .storage-log-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .storage-detail-graph-wrap {
+    height:
+      200px !important;
+
+    min-height:
+      200px !important;
+  }
+
+}
+
+
+/* =====================================================================
+   RESPONSIVE — TABLET
+   ===================================================================== */
+
+@media (max-width: 900px) {
+
+  .storage-page-header {
+    min-height: 0;
+
+    align-items:
+      flex-start !important;
+  }
+
+  .storage-overview-grid {
+    grid-template-columns:
+      1fr !important;
+  }
+
+  .storage-detail-footer {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .storage-detail-footer > div:nth-child(3) {
+    border-left: 0 !important;
+
+    border-top:
+      1px solid #354039;
+  }
+
+  .storage-detail-footer > div:nth-child(4) {
+    border-top:
+      1px solid #354039;
+  }
+
+  .storage-terminal-columns {
+    display: none !important;
+  }
+
+  .storage-terminal-row {
+    min-width: 0;
+
+    grid-template-columns:
+      68px
+      minmax(0, 1fr)
+      92px !important;
+
+    gap:
+      7px 12px !important;
+
+    align-items:
+      start !important;
+
+    padding:
+      12px 13px !important;
+  }
+
+  .terminal-index {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .terminal-time {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .terminal-event-cell {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .terminal-file {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+
+  .terminal-source {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .terminal-size {
+    grid-column: 3;
+    grid-row: 3;
+
+    justify-self:
+      start !important;
+  }
+
+}
+
+
+/* =====================================================================
+   RESPONSIVE — PHONE
+   ===================================================================== */
+
+@media (max-width: 650px) {
+
+  .storage-page-header {
+    flex-direction:
+      column !important;
+
+    gap:
+      14px !important;
+
+    padding:
+      17px 15px !important;
+
+    border-width:
+      2px !important;
+  }
+
+  .storage-page-header h1 {
+    font-size:
+      29px !important;
+  }
+
+  .storage-page-header p {
+    font-size:
+      12px !important;
+  }
+
+  .storage-tabs {
+    width:
+      100% !important;
+
+    display:
+      grid !important;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .storage-tab {
+    min-width:
+      0 !important;
+
+    padding:
+      0 7px !important;
+
+    font-size:
+      10px !important;
+  }
+
+  .storage-overview-stats,
+  .storage-activity-stats,
+  .storage-log-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap:
+      8px !important;
+  }
+
+  .storage-overview-stat,
+  .storage-activity-stat,
+  .storage-log-stat {
+    min-height:
+      79px;
+
+    padding:
+      12px !important;
+  }
+
+  .storage-overview-stat > strong,
+  .storage-activity-stat > strong,
+  .storage-log-stat > strong {
+    font-size:
+      19px !important;
+  }
+
+  .storage-overview-grid > .panel {
+    padding:
+      16px !important;
+
+    border-width:
+      2px !important;
+  }
+
+  .storage-info-row {
+    grid-template-columns:
+      92px
+      minmax(0, 1fr) !important;
+
+    gap:
+      10px !important;
+  }
+
+  .storage-info-row span {
+    font-size:
+      10px !important;
+  }
+
+  .storage-info-row strong {
+    font-size:
+      10px !important;
+  }
+
+  .storage-activity-detail-panel {
+    padding:
+      16px 14px 0 !important;
+
+    border-width:
+      2px !important;
+  }
+
+  .storage-detail-graph-wrap {
+    height:
+      175px !important;
+
+    min-height:
+      175px !important;
+  }
+
+  .storage-detail-footer {
+    margin:
+      12px -14px 0 !important;
+  }
+
+  .storage-detail-footer > div {
+    padding:
+      11px 12px !important;
+  }
+
+  .storage-detail-footer strong {
+    font-size:
+      12px !important;
+  }
+
+  .storage-terminal {
+    border-width:
+      2px !important;
+  }
+
+  .storage-terminal-header {
+    align-items:
+      flex-start !important;
+
+    flex-direction:
+      column !important;
+
+    padding:
+      12px !important;
+  }
+
+  .storage-terminal-controls {
+    width:
+      100% !important;
+
+    display:
+      grid !important;
+
+    grid-template-columns:
+      1fr 1fr !important;
+
+    gap:
+      7px !important;
+  }
+
+  .terminal-filter {
+    grid-column:
+      1 / -1;
+  }
+
+  .terminal-control-button {
+    justify-content:
+      center;
+  }
+
+  .storage-terminal-row {
+    grid-template-columns:
+      62px
+      minmax(0, 1fr) !important;
+
+    min-height:
+      0 !important;
+
+    gap:
+      7px 10px !important;
+  }
+
+  .terminal-index {
+    grid-column:
+      1;
+    grid-row:
+      1;
+  }
+
+  .terminal-time {
+    grid-column:
+      1;
+    grid-row:
+      2;
+  }
+
+  .terminal-event-cell {
+    grid-column:
+      1;
+    grid-row:
+      3;
+  }
+
+  .terminal-file {
+    grid-column:
+      2;
+    grid-row:
+      1 / span 2;
+  }
+
+  .terminal-source {
+    grid-column:
+      2;
+    grid-row:
+      3;
+  }
+
+  .terminal-size {
+    grid-column:
+      2;
+    grid-row:
+      4;
+
+    margin-top:
+      3px;
+  }
+
+  .terminal-source-content {
+    flex-wrap:
+      wrap;
+  }
+
+  .storage-terminal-footer {
+    align-items:
+      flex-start !important;
+
+    flex-direction:
+      column !important;
+  }
+
+}
+
+
+/* =====================================================================
+   MOTION
+   ===================================================================== */
+
+@keyframes storagePageIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .storage-page {
+    animation:
+      none !important;
+  }
+
+}
+
+/* =========================================================
+   STORAGE V12.1 — LOG TERMINAL READABILITY
+   Paste at the VERY END of App.css
+   ========================================================= */
+
+
+/* Terminal heading */
+
+.storage-terminal-title > div > span {
+  font-size: 15px !important;
+  font-weight: 850 !important;
+}
+
+.storage-terminal-title small {
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+}
+
+
+/* Controls */
+
+.terminal-filter,
+.terminal-control-button {
+  min-height: 38px !important;
+
+  padding: 0 12px !important;
+
+  font-size: 10px !important;
+  font-weight: 750 !important;
+}
+
+
+/* Column header */
+
+.storage-terminal-columns {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+
+  font-size: 10px !important;
+  font-weight: 800 !important;
+
+  letter-spacing: 0.045em !important;
+}
+
+
+/* Event rows */
+
+.storage-terminal-row {
+  min-height: 78px !important;
+
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+
+/* # */
+
+.terminal-index {
+  color: #b7c1bb !important;
+
+  font-size: 11px !important;
+  font-weight: 750 !important;
+}
+
+
+/* Time */
+
+.terminal-time {
+  color: #c0cac4 !important;
+
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+}
+
+
+/* CREATED / MOVED / DELETED */
+
+.terminal-event {
+  padding: 5px 8px !important;
+
+  font-size: 9px !important;
+  font-weight: 900 !important;
+}
+
+
+/* Filename */
+
+.terminal-file strong {
+  color: #f4f7f5 !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+
+  line-height: 1.25 !important;
+}
+
+
+/* Full path */
+
+.terminal-path,
+.terminal-destination {
+  margin-top: 5px !important;
+
+  color: #a4afa8 !important;
+
+  font-size: 9.5px !important;
+  line-height: 1.35 !important;
+}
+
+
+/* Source */
+
+.source-badge {
+  padding: 4px 7px !important;
+
+  font-size: 8px !important;
+}
+
+.source-user,
+.source-ip {
+  color: #b2bcb6 !important;
+
+  font-size: 9px !important;
+  font-weight: 650 !important;
+}
+
+
+/* Size */
+
+.terminal-size {
+  color: #e0e6e2 !important;
+
+  font-size: 10.5px !important;
+  font-weight: 750 !important;
+}
+
+
+/* Slightly more vertical space for the console */
+
+.storage-terminal-body {
+  max-height: 540px !important;
+}
+
+
+/* Footer */
+
+.storage-terminal-footer {
+  min-height: 46px !important;
+
+  font-size: 10px !important;
+}
+
+.storage-terminal-footer strong {
+  font-size: 10px !important;
+}
+
+
+/* Top log stat cards */
+
+.storage-log-stat > span {
+  font-size: 10.5px !important;
+}
+
+.storage-log-stat > strong {
+  font-size: 23px !important;
+}
+
+.storage-log-stat > small {
+  font-size: 10px !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .terminal-file strong {
+    font-size: 12px !important;
+  }
+
+  .terminal-path,
+  .terminal-destination {
+    font-size: 9px !important;
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .storage-terminal-row {
+    min-height: 0 !important;
+  }
+
+  .terminal-index {
+    font-size: 10px !important;
+  }
+
+  .terminal-time {
+    font-size: 9px !important;
+  }
+
+  .terminal-file strong {
+    font-size: 12px !important;
+  }
+
+  .source-user,
+  .source-ip {
+    font-size: 8.5px !important;
+  }
+
+}
+
+/* =========================================================
+   STORAGE V12.2 — TERMINAL READABILITY
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   General small text — brighter + larger
+   --------------------------------------------------------- */
+
+.storage-terminal-columns {
+  color: #aeb8b2 !important;
+
+  font-size: 11px !important;
+  font-weight: 850 !important;
+}
+
+.storage-terminal-title small {
+  color: #b8c2bc !important;
+
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+}
+
+.storage-log-stat > small {
+  color: #aab4ae !important;
+
+  font-size: 10.5px !important;
+  font-weight: 650 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Terminal rows
+   --------------------------------------------------------- */
+
+.terminal-index {
+  color: #c3ccc7 !important;
+
+  font-size: 11px !important;
+  font-weight: 800 !important;
+}
+
+.terminal-time {
+  color: #d0d8d3 !important;
+
+  font-size: 11px !important;
+  font-weight: 750 !important;
+}
+
+.terminal-file strong {
+  color: #f4f7f5 !important;
+
+  font-size: 13.5px !important;
+  font-weight: 850 !important;
+}
+
+.terminal-path,
+.terminal-destination {
+  color: #b3bdb7 !important;
+
+  font-size: 10px !important;
+  font-weight: 600 !important;
+}
+
+.terminal-destination {
+  color: #b9c9be !important;
+}
+
+
+/* ---------------------------------------------------------
+   Source information
+   --------------------------------------------------------- */
+
+.source-badge {
+  font-size: 8.5px !important;
+  font-weight: 900 !important;
+}
+
+.source-user,
+.source-ip {
+  color: #bac4be !important;
+
+  font-size: 9.5px !important;
+  font-weight: 650 !important;
+}
+
+.source-ip::before {
+  color: #7d8a82 !important;
+}
+
+
+/* ---------------------------------------------------------
+   File size
+   --------------------------------------------------------- */
+
+.terminal-size {
+  color: #e6ebe8 !important;
+
+  font-size: 11px !important;
+  font-weight: 800 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+
+.storage-terminal-footer {
+  color: #b2bcb6 !important;
+
+  font-size: 10.5px !important;
+  font-weight: 650 !important;
+}
+
+.storage-terminal-footer strong {
+  color: #e2e8e4 !important;
+
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+}
+
+.terminal-footer-right > span {
+  font-size: 10px !important;
+}
+
+
+/* ---------------------------------------------------------
+   Controls
+   --------------------------------------------------------- */
+
+.terminal-filter,
+.terminal-control-button {
+  color: #d8dfdb !important;
+
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Event badges
+   --------------------------------------------------------- */
+
+.terminal-event {
+  min-width: 58px;
+
+  justify-content: center;
+
+  font-size: 9.5px !important;
+  font-weight: 900 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile terminal labels
+   --------------------------------------------------------- */
+
+.mobile-terminal-label {
+  color: #89968e !important;
+
+  font-size: 8px !important;
+  font-weight: 850 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .terminal-time {
+    font-size: 10px !important;
+  }
+
+  .terminal-path,
+  .terminal-destination {
+    font-size: 9.5px !important;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   Phone
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+  .terminal-file strong {
+    font-size: 12.5px !important;
+  }
+
+  .source-user,
+  .source-ip {
+    font-size: 9px !important;
+  }
+
+  .terminal-size {
+    font-size: 10px !important;
+  }
+
+}
+
+/* =========================================================
+   PHONE NAV — FIXED BOTTOM BAR
+   NO COLLAPSE / NO ARROW
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  /* ---------------------------------------------------------
+     PAGE SPACE FOR FIXED BOTTOM NAV
+     --------------------------------------------------------- */
+
+  body {
+    padding-bottom: 78px !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     SIDEBAR BECOMES BOTTOM NAV
+     --------------------------------------------------------- */
+
+  .sidebar-v10,
+  .sidebar-v10.collapsed {
+    position: fixed !important;
+
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 72px !important;
+
+    margin: 0 !important;
+    padding: 7px 9px !important;
+
+    transform: none !important;
+
+    display: block !important;
+
+    background:
+      rgba(12, 16, 18, 0.98) !important;
+
+    border:
+      2px solid var(--border) !important;
+
+    border-width:
+      2px 0 0 0 !important;
+
+    border-radius:
+      0 !important;
+
+    box-shadow:
+      none !important;
+
+    z-index: 1000 !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     HIDE DESKTOP-ONLY ELEMENTS
+     --------------------------------------------------------- */
+
+  .sidebar-v10 .brand-v10,
+  .sidebar-v10.collapsed .brand-v10,
+
+  .sidebar-v10 .sidebar-bottom-v10,
+  .sidebar-v10.collapsed .sidebar-bottom-v10,
+
+  .sidebar-collapse-button {
+    display: none !important;
+
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     NAV GRID
+     --------------------------------------------------------- */
+
+  .sidebar-v10 nav,
+  .sidebar-v10.collapsed nav {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(6, minmax(0, 1fr)) !important;
+
+    align-items: center !important;
+
+    gap: 2px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     NAV BUTTON
+     --------------------------------------------------------- */
+
+  .nav-item-v10,
+  .sidebar-v10.collapsed .nav-item-v10 {
+    width: 100% !important;
+    height: 56px !important;
+    min-height: 56px !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 3px !important;
+
+    margin: 0 !important;
+    padding: 3px !important;
+
+    color:
+      #aeb8b2 !important;
+
+    background:
+      transparent !important;
+
+    border:
+      1px solid transparent !important;
+
+    border-radius:
+      9px !important;
+
+    transform:
+      none !important;
+
+    transition:
+      background 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     NAV ICON
+     --------------------------------------------------------- */
+
+  .nav-icon-wrap,
+  .sidebar-v10.collapsed .nav-icon-wrap {
+    width: 27px !important;
+    height: 27px !important;
+
+    flex:
+      0 0 27px !important;
+
+    display: grid !important;
+
+    place-items:
+      center !important;
+
+    padding:
+      0 !important;
+
+    border-radius:
+      7px !important;
+  }
+
+  .nav-icon-wrap svg {
+    width:
+      19px !important;
+
+    height:
+      19px !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     NAV LABEL
+     --------------------------------------------------------- */
+
+  .sidebar-v10 .nav-label,
+  .sidebar-v10.collapsed .nav-label {
+    display: block !important;
+
+    color:
+      #cbd3ce !important;
+
+    font-size:
+      10px !important;
+
+    line-height:
+      1 !important;
+
+    font-weight:
+      800 !important;
+
+    letter-spacing:
+      0 !important;
+
+    white-space:
+      nowrap !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     ACTIVE TAB
+     --------------------------------------------------------- */
+
+  .nav-item-v10.active,
+  .sidebar-v10.collapsed .nav-item-v10.active {
+    color:
+      var(--accent) !important;
+
+    background:
+      rgba(128, 210, 146, 0.10) !important;
+
+    border-color:
+      rgba(128, 210, 146, 0.28) !important;
+  }
+
+  .nav-item-v10.active .nav-icon-wrap {
+    color:
+      var(--accent) !important;
+  }
+
+  .nav-item-v10.active .nav-label {
+    color:
+      #f0f4f1 !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     DISABLE DESKTOP HOVER MOVEMENT
+     --------------------------------------------------------- */
+
+  .nav-item-v10:hover,
+  .sidebar-v10.collapsed .nav-item-v10:hover {
+    transform:
+      none !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     MAIN CONTENT — FULL WIDTH
+     --------------------------------------------------------- */
+
+  .content-v10,
+  .sidebar-collapsed .content-v10 {
+    width:
+      100% !important;
+
+    margin-left:
+      0 !important;
+
+    padding:
+      12px
+      12px
+      92px !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     STORAGE PAGE
+     Keep content clear from bottom nav
+     --------------------------------------------------------- */
+
+  .storage-page {
+    padding-bottom:
+      8px !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     SAFE AREA FOR IPHONE
+     --------------------------------------------------------- */
+
+  @supports (
+    padding-bottom:
+      env(safe-area-inset-bottom)
+  ) {
+
+    body {
+      padding-bottom:
+        calc(
+          78px +
+          env(safe-area-inset-bottom)
+        ) !important;
+    }
+
+    .sidebar-v10,
+    .sidebar-v10.collapsed {
+      height:
+        calc(
+          72px +
+          env(safe-area-inset-bottom)
+        ) !important;
+
+      padding-bottom:
+        calc(
+          7px +
+          env(safe-area-inset-bottom)
+        ) !important;
+    }
+
+    .content-v10,
+    .sidebar-collapsed .content-v10 {
+      padding-bottom:
+        calc(
+          92px +
+          env(safe-area-inset-bottom)
+        ) !important;
+    }
+
+  }
+
+}
+

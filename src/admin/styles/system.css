@@ -1,0 +1,1151 @@
+/* =========================================================
+   SUREEPI SYSTEM V13 — NEOFETCH CONSOLE
+   Paste at the VERY END of App.css
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.system-page {
+  width: 100%;
+  min-width: 0;
+
+  animation:
+    systemPageIn 340ms ease both;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.system-page-hero {
+  min-height: 116px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 14px;
+  padding: 20px 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #11171a,
+      #0c1114
+    );
+
+  border:
+    3px solid var(--border);
+
+  border-radius:
+    15px;
+}
+
+.system-page-kicker {
+  display: block;
+
+  color: var(--accent);
+
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.system-page-hero h1 {
+  margin:
+    7px 0 5px;
+
+  color:
+    var(--text);
+
+  font-size:
+    clamp(
+      31px,
+      2.4vw,
+      41px
+    );
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing:
+    -0.04em;
+}
+
+.system-page-hero p {
+  margin: 0;
+
+  color:
+    #b5c0b9;
+
+  font-size:
+    13px;
+
+  font-weight:
+    500;
+}
+
+.system-page-state {
+  min-width: 172px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    12px 14px;
+
+  color:
+    var(--accent);
+
+  background:
+    rgba(
+      128,
+      210,
+      146,
+      0.075
+    );
+
+  border:
+    2px solid
+    rgba(
+      128,
+      210,
+      146,
+      0.25
+    );
+
+  border-radius:
+    10px;
+}
+
+.system-page-state.offline {
+  color:
+    var(--danger);
+}
+
+.system-page-state span {
+  display: block;
+
+  color:
+    #9ca8a1;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+}
+
+.system-page-state strong {
+  display: block;
+
+  margin-top:
+    3px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    850;
+}
+
+
+/* =========================================================
+   NEOFETCH PANEL
+   ========================================================= */
+
+.neofetch-panel {
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d1315,
+      #090e10
+    );
+
+  border:
+    3px solid var(--border);
+
+  border-radius:
+    14px;
+}
+
+
+/* terminal header */
+
+.neofetch-topbar {
+  min-height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 18px;
+
+  padding:
+    10px 16px;
+
+  background:
+    #0e1416;
+
+  border-bottom:
+    1px solid
+    var(--border-soft);
+}
+
+.neofetch-terminal-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    #e6ece8;
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    11px;
+
+  font-weight:
+    750;
+}
+
+.neofetch-terminal-title svg {
+  color:
+    var(--accent);
+}
+
+.neofetch-session {
+  color:
+    #818e86;
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    8px;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.08em;
+}
+
+
+/* =========================================================
+   MAIN NEOFETCH BODY
+   ========================================================= */
+
+.neofetch-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(360px, 0.9fr)
+    minmax(390px, 1.1fr);
+
+  align-items: center;
+
+  gap: 42px;
+
+  padding:
+    34px 42px 30px;
+}
+
+
+/* ASCII */
+
+.neofetch-ascii {
+  min-width: 0;
+
+  text-align: center;
+}
+
+.neofetch-ascii pre {
+  display:
+    inline-block;
+
+  margin: 0;
+
+  color:
+    rgba(
+      128,
+      210,
+      146,
+      0.70
+    );
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    clamp(
+      8px,
+      0.75vw,
+      13px
+    );
+
+  font-weight:
+    800;
+
+  line-height:
+    1.15;
+
+  text-align:
+    left;
+
+  white-space:
+    pre;
+}
+
+.neofetch-ascii-caption {
+  display: block;
+
+  margin-top:
+    17px;
+
+  color:
+    #77847c;
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    8px;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.13em;
+}
+
+
+/* right hand information */
+
+.neofetch-info {
+  width: 100%;
+
+  max-width:
+    680px;
+}
+
+.neofetch-user {
+  margin-bottom:
+    15px;
+
+  font-family:
+    var(--mono);
+}
+
+.neofetch-user strong {
+  display: block;
+
+  color:
+    var(--accent);
+
+  font-size:
+    18px;
+
+  font-weight:
+    800;
+}
+
+.neofetch-user span {
+  display: block;
+
+  margin-top:
+    5px;
+
+  overflow: hidden;
+
+  color:
+    #5f6e65;
+
+  font-size:
+    11px;
+
+  white-space:
+    nowrap;
+}
+
+
+/* info rows */
+
+.neofetch-row {
+  display: grid;
+
+  grid-template-columns:
+    145px
+    minmax(0, 1fr);
+
+  align-items:
+    center;
+
+  gap: 15px;
+
+  min-height:
+    31px;
+
+  font-family:
+    var(--mono);
+}
+
+.neofetch-row > span {
+  color:
+    #96a29a;
+
+  font-size:
+    10px;
+
+  font-weight:
+    750;
+}
+
+.neofetch-row > strong {
+  min-width: 0;
+
+  overflow: hidden;
+
+  color:
+    #e3e9e5;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+}
+
+.neofetch-row > strong.accent {
+  color:
+    var(--accent);
+}
+
+.neofetch-row > strong.danger {
+  color:
+    var(--danger);
+}
+
+.neo-inline-label {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap: 5px;
+}
+
+
+/* =========================================================
+   LIVE METRICS
+   ========================================================= */
+
+.neofetch-live-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  border-top:
+    1px solid
+    var(--border-soft);
+
+  border-bottom:
+    1px solid
+    var(--border-soft);
+}
+
+.neo-metric {
+  min-width: 0;
+
+  padding:
+    15px 17px;
+
+  background:
+    rgba(
+      8,
+      13,
+      15,
+      0.38
+    );
+}
+
+.neo-metric + .neo-metric {
+  border-left:
+    1px solid
+    var(--border-soft);
+}
+
+.neo-metric-head {
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap: 10px;
+}
+
+.neo-metric-head > div {
+  min-width: 0;
+
+  display: flex;
+
+  align-items:
+    center;
+
+  gap: 7px;
+
+  color:
+    #9aa69e;
+}
+
+.neo-metric-head svg {
+  color:
+    var(--accent);
+}
+
+.neo-metric-head span {
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+}
+
+.neo-metric-head strong {
+  color:
+    #edf2ef;
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    12px;
+
+  font-weight:
+    750;
+
+  white-space:
+    nowrap;
+}
+
+.neo-meter {
+  height: 5px;
+
+  margin-top:
+    11px;
+
+  overflow:
+    hidden;
+
+  background:
+    #29322d;
+
+  border-radius:
+    4px;
+}
+
+.neo-meter > div {
+  height: 100%;
+
+  background:
+    var(--accent);
+
+  border-radius:
+    inherit;
+
+  transition:
+    width 420ms ease;
+}
+
+
+/* =========================================================
+   SYSTEM LOAD
+   ========================================================= */
+
+.neofetch-load {
+  padding:
+    17px;
+}
+
+.neofetch-load-title {
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap: 15px;
+
+  margin-bottom:
+    12px;
+}
+
+.neofetch-load-title > div {
+  display: flex;
+
+  align-items:
+    center;
+
+  gap: 7px;
+
+  color:
+    #9da9a1;
+}
+
+.neofetch-load-title span {
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.05em;
+}
+
+.neofetch-load-title > span {
+  color:
+    var(--accent);
+}
+
+.neofetch-load-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    10px;
+}
+
+.neofetch-load-item {
+  min-width: 0;
+
+  padding:
+    12px 13px;
+
+  background:
+    #0b1013;
+
+  border:
+    1px solid
+    #354039;
+
+  border-radius:
+    8px;
+}
+
+.neofetch-load-item > span {
+  display: block;
+
+  color:
+    #919e96;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+}
+
+.neofetch-load-item > strong {
+  display: block;
+
+  margin-top:
+    7px;
+
+  color:
+    #edf2ef;
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    17px;
+
+  font-weight:
+    750;
+}
+
+.neofetch-progress {
+  height: 3px;
+
+  margin-top:
+    10px;
+
+  overflow:
+    hidden;
+
+  background:
+    #28312c;
+}
+
+.neofetch-progress > div {
+  height: 100%;
+
+  background:
+    var(--accent);
+
+  transition:
+    width 420ms ease;
+}
+
+
+/* =========================================================
+   PROMPT
+   ========================================================= */
+
+.neofetch-prompt {
+  min-height:
+    48px;
+
+  display: flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+
+  padding:
+    10px 17px;
+
+  color:
+    #98a49c;
+
+  background:
+    #090d0f;
+
+  border-top:
+    1px solid
+    var(--border-soft);
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    10px;
+}
+
+.neofetch-prompt > span:first-child,
+.neofetch-prompt strong {
+  color:
+    var(--accent);
+}
+
+.neofetch-prompt em {
+  color:
+    #dfe6e1;
+
+  font-style:
+    normal;
+
+  font-weight:
+    700;
+}
+
+.neofetch-prompt i {
+  width: 7px;
+  height: 14px;
+
+  margin-left:
+    1px;
+
+  background:
+    var(--accent);
+
+  animation:
+    neofetchCursor
+    1s steps(1)
+    infinite;
+}
+
+
+/* =========================================================
+   MINI PANELS
+   ========================================================= */
+
+.system-mini-panels {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+
+  margin-top:
+    14px;
+}
+
+.system-mini-panel {
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    37px
+    minmax(0, 1fr);
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  min-height:
+    84px;
+
+  padding:
+    14px 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #11171a,
+      #0c1114
+    );
+
+  border:
+    2px solid
+    var(--border);
+
+  border-radius:
+    11px;
+}
+
+.system-mini-panel > svg {
+  width: 37px;
+  height: 37px;
+
+  padding:
+    9px;
+
+  color:
+    var(--accent);
+
+  border:
+    1px solid
+    var(--border-soft);
+
+  border-radius:
+    8px;
+}
+
+.system-mini-panel span,
+.system-mini-panel small {
+  display: block;
+}
+
+.system-mini-panel span {
+  color:
+    #939f97;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+}
+
+.system-mini-panel strong {
+  display: block;
+
+  overflow:
+    hidden;
+
+  margin-top:
+    4px;
+
+  color:
+    #edf2ef;
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    12px;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+}
+
+.system-mini-panel small {
+  margin-top:
+    4px;
+
+  color:
+    #7e8a82;
+
+  font-size:
+    9px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .neofetch-main {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      28px;
+
+    padding:
+      28px 26px;
+  }
+
+  .neofetch-info {
+    max-width:
+      760px;
+
+    margin:
+      0 auto;
+  }
+
+  .neofetch-live-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .neo-metric:nth-child(3) {
+    border-left:
+      0;
+
+    border-top:
+      1px solid
+      var(--border-soft);
+  }
+
+  .neo-metric:nth-child(4) {
+    border-top:
+      1px solid
+      var(--border-soft);
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .system-page-hero {
+    min-height: 0;
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      14px;
+
+    padding:
+      17px 15px;
+
+    border-width:
+      2px;
+  }
+
+  .system-page-hero h1 {
+    font-size:
+      29px;
+  }
+
+  .system-page-hero p {
+    font-size:
+      12px;
+  }
+
+  .neofetch-panel {
+    border-width:
+      2px;
+  }
+
+  .neofetch-session {
+    display:
+      none;
+  }
+
+  .neofetch-main {
+    gap:
+      24px;
+
+    padding:
+      23px 15px;
+  }
+
+  .neofetch-ascii {
+    overflow:
+      hidden;
+  }
+
+  .neofetch-ascii pre {
+    max-width:
+      100%;
+
+    font-size:
+      clamp(
+        5px,
+        1.8vw,
+        8px
+      );
+  }
+
+  .neofetch-row {
+    grid-template-columns:
+      105px
+      minmax(0, 1fr);
+
+    gap:
+      8px;
+
+    min-height:
+      29px;
+  }
+
+  .neofetch-row > span {
+    font-size:
+      9px;
+  }
+
+  .neofetch-row > strong {
+    font-size:
+      9.5px;
+  }
+
+  .neofetch-live-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .neo-metric + .neo-metric {
+    border-left:
+      0;
+
+    border-top:
+      1px solid
+      var(--border-soft);
+  }
+
+  .neofetch-load-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .system-mini-panels {
+    grid-template-columns:
+      1fr;
+  }
+
+  .neofetch-prompt {
+    overflow-x:
+      auto;
+
+    white-space:
+      nowrap;
+  }
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes neofetchCursor {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes systemPageIn {
+  from {
+    opacity: 0;
+    transform:
+      translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .system-page {
+    animation:
+      none !important;
+  }
+
+  .neofetch-prompt i {
+    animation:
+      none !important;
+  }
+
+}
+

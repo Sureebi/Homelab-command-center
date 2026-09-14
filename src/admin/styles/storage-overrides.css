@@ -1,0 +1,48 @@
+/* =========================================================
+   STORAGE V12.4 — SMART LOG CONSOLE
+   Paste at the VERY END of App.css
+   ========================================================= */
+
+.storage-terminal {
+  position: relative;
+}
+
+.terminal-new-events-button {
+  position: absolute;
+  right: 18px;
+  bottom: 58px;
+  z-index: 12;
+  min-height: 34px;
+  padding: 0 12px;
+  color: #e8eee9;
+  background: #141b18;
+  border: 1px solid rgba(128, 210, 146, 0.38);
+  border-radius: 7px;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.055em;
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.terminal-new-events-button:hover {
+  transform: translateY(-1px);
+  background: #18211d;
+  border-color: rgba(128, 210, 146, 0.62);
+}
+
+.terminal-new-events-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 650px) {
+  .terminal-new-events-button {
+    right: 12px;
+    bottom: 54px;
+    min-height: 32px;
+    padding: 0 10px;
+    font-size: 8.5px;
+  }
+}

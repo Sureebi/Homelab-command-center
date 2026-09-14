@@ -1,0 +1,2186 @@
+/* =========================================================
+   SUREEPI CONTROL CENTER
+   ========================================================= */
+
+.control-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.control-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 0 6px;
+}
+
+.control-kicker {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+
+  color: #7b8794;
+}
+
+.control-header h1 {
+  margin: 0;
+
+  font-size: clamp(
+    32px,
+    4vw,
+    48px
+  );
+
+  line-height: 1;
+  letter-spacing: -0.04em;
+
+  color: #f4f7fa;
+}
+
+.control-header p {
+  margin: 12px 0 0;
+
+  color: #8d99a6;
+  font-size: 14px;
+}
+
+.control-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 14px;
+
+  border: 1px solid
+    rgba(61, 214, 140, 0.22);
+
+  background:
+    rgba(61, 214, 140, 0.06);
+
+  border-radius: 7px;
+
+  color: #5ee0a0;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   SYSTEM CARD
+   ========================================================= */
+
+.control-system-card {
+  display: grid;
+
+  grid-template-columns:
+    auto minmax(180px, 1fr) auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 22px;
+
+  border:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 27, 35, 0.96),
+      rgba(13, 18, 24, 0.96)
+    );
+}
+
+.control-system-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background:
+    rgba(64, 168, 255, 0.08);
+
+  border:
+    1px solid
+      rgba(64, 168, 255, 0.15);
+
+  color: #55aaff;
+}
+
+.control-system-card > div:nth-child(2) > span {
+  color: #778391;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.control-system-card h2 {
+  margin: 5px 0 3px;
+
+  color: #f2f5f8;
+
+  font-size: 19px;
+}
+
+.control-system-card p {
+  margin: 0;
+
+  color: #778391;
+
+  font-size: 12px;
+}
+
+.control-system-meta {
+  display: flex;
+  align-items: stretch;
+}
+
+.control-system-meta > div {
+  min-width: 100px;
+
+  padding: 5px 18px;
+
+  border-left:
+    1px solid
+      rgba(255,255,255,0.07);
+}
+
+.control-system-meta span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #66727f;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.control-system-meta strong {
+  color: #e9eef3;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.control-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.control-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.control-section-title > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #74808d;
+}
+
+.control-section-title span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #687582;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.control-section-title h2 {
+  margin: 0;
+
+  color: #dce3e9;
+
+  font-size: 15px;
+}
+
+.control-refresh {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.08);
+
+  border-radius: 6px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  color: #aeb8c2;
+
+  cursor: pointer;
+}
+
+.control-refresh:hover {
+  border-color:
+    rgba(64, 168, 255, 0.25);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.control-service-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+.control-service-card {
+  padding: 17px;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.07);
+
+  border-radius: 9px;
+
+  background:
+    rgba(14, 20, 26, 0.82);
+}
+
+.control-service-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.control-service-icon {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 6px;
+
+  background:
+    rgba(255,255,255,0.035);
+
+  color: #778491;
+}
+
+.control-service-state {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.control-service-state i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  box-shadow:
+    0 0 9px currentColor;
+}
+
+.control-service-state.running {
+  color: #4fd695;
+}
+
+.control-service-state.stopped {
+  color: #e16f6f;
+}
+
+.control-service-card h3 {
+  margin: 0 0 5px;
+
+  color: #edf1f5;
+
+  font-size: 14px;
+}
+
+.control-service-card > p {
+  min-height: 30px;
+
+  margin: 0 0 17px;
+
+  color: #65717d;
+
+  font-size: 10px;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+}
+
+.control-service-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 12px;
+
+  border-top:
+    1px solid
+      rgba(255,255,255,0.055);
+}
+
+.control-service-meta span {
+  color: #606c78;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.control-service-meta strong {
+  color: #8f9ba6;
+
+  font-size: 9px;
+}
+
+.control-service-restart {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  margin-top: 13px;
+  padding: 8px;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.07);
+
+  border-radius: 5px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  color: #697580;
+}
+
+.control-service-restart:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   DIAGNOSTICS
+   ========================================================= */
+
+.control-diagnostics-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+}
+
+.control-diagnostics-grid button {
+  min-height: 54px;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.07);
+
+  border-radius: 7px;
+
+  background:
+    rgba(14, 20, 26, 0.72);
+
+  color: #77838f;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.control-diagnostics-grid button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.control-loading {
+  padding: 50px;
+
+  color: #7f8a95;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (
+  max-width: 1050px
+) {
+
+  .control-service-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .control-system-card {
+    grid-template-columns:
+      auto 1fr;
+  }
+
+  .control-system-meta {
+    grid-column:
+      1 / -1;
+
+    border-top:
+      1px solid
+        rgba(255,255,255,0.06);
+
+    padding-top: 15px;
+  }
+
+  .control-system-meta > div:first-child {
+    border-left: 0;
+  }
+}
+
+
+@media (
+  max-width: 650px
+) {
+
+  .control-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .control-service-grid,
+  .control-diagnostics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-system-meta {
+    display: grid;
+    grid-template-columns:
+      repeat(
+        3,
+        1fr
+      );
+  }
+
+  .control-system-meta > div {
+    min-width: 0;
+    padding:
+      5px 10px;
+  }
+}
+
+/* =========================================================
+   SERVICE ACTIONS
+   ========================================================= */
+
+.control-service-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.control-service-actions button {
+  min-height: 34px;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 6px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+
+/* START */
+
+.control-service-start {
+  color: #58d99a !important;
+
+  border-color:
+    rgba(88, 217, 154, 0.16)
+    !important;
+
+  background:
+    rgba(88, 217, 154, 0.045)
+    !important;
+}
+
+.control-service-start:hover:not(:disabled) {
+  background:
+    rgba(88, 217, 154, 0.09)
+    !important;
+
+  border-color:
+    rgba(88, 217, 154, 0.28)
+    !important;
+}
+
+
+/* STOP */
+
+.control-service-stop {
+  color: #df7777 !important;
+
+  border-color:
+    rgba(223, 119, 119, 0.15)
+    !important;
+
+  background:
+    rgba(223, 119, 119, 0.035)
+    !important;
+}
+
+.control-service-stop:hover:not(:disabled) {
+  background:
+    rgba(223, 119, 119, 0.08)
+    !important;
+
+  border-color:
+    rgba(223, 119, 119, 0.27)
+    !important;
+}
+
+
+/* RESTART */
+
+.control-service-restart {
+  color: #8995a1;
+}
+
+.control-service-restart:hover:not(:disabled) {
+  color: #dce4eb;
+
+  border-color:
+    rgba(90, 170, 255, 0.22);
+
+  background:
+    rgba(90, 170, 255, 0.045);
+}
+
+
+/* BUSY / DISABLED */
+
+.control-service-actions button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+
+/* SPINNER */
+
+.control-spin {
+  animation:
+    control-spin 0.8s
+    linear infinite;
+}
+
+@keyframes control-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ERROR */
+
+.control-error {
+  padding: 11px 14px;
+
+  border:
+    1px solid
+      rgba(223, 119, 119, 0.18);
+
+  border-radius: 7px;
+
+  background:
+    rgba(223, 119, 119, 0.055);
+
+  color: #e38a8a;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   CONTROL CENTER - READABILITY OVERRIDES
+   ========================================================= */
+
+/* Header */
+.control-kicker {
+  font-size: 13px;
+}
+
+.control-header p {
+  font-size: 16px;
+}
+
+.control-status {
+  padding: 12px 17px;
+  font-size: 13px;
+}
+
+/* System card */
+.control-system-card > div:nth-child(2) > span {
+  font-size: 12px;
+}
+
+.control-system-card h2 {
+  font-size: 22px;
+}
+
+.control-system-card p {
+  font-size: 14px;
+}
+
+.control-system-meta span {
+  font-size: 11px;
+}
+
+.control-system-meta strong {
+  font-size: 17px;
+}
+
+/* Section headings */
+.control-section-title span {
+  font-size: 11px;
+}
+
+.control-section-title h2 {
+  font-size: 17px;
+}
+
+.control-refresh {
+  min-height: 42px;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+/* Service cards */
+.control-service-card {
+  padding: 21px;
+}
+
+.control-service-state {
+  font-size: 11px;
+}
+
+.control-service-state i {
+  width: 7px;
+  height: 7px;
+}
+
+.control-service-card h3 {
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.control-service-card > p {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.control-service-meta span {
+  font-size: 11px;
+}
+
+.control-service-meta strong {
+  font-size: 11px;
+}
+
+/* Start / Stop / Restart */
+.control-service-actions {
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.control-service-actions button {
+  min-height: 44px;
+  padding: 11px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 7px;
+}
+
+/* Old standalone restart rule */
+.control-service-restart {
+  min-height: 44px;
+  font-size: 14px;
+}
+
+/* Diagnostics */
+.control-diagnostics-grid button {
+  min-height: 64px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Loading */
+.control-loading {
+  font-size: 14px;
+}
+
+/* =========================================================
+   CONTROL CENTER - FINAL READABILITY TWEAKS
+   ========================================================= */
+
+.control-section-title span,
+.control-service-meta span,
+.control-service-meta strong,
+.control-kicker,
+.control-system-card > div:nth-child(2) > span {
+  font-size: 12px;
+}
+
+.control-service-state {
+  font-size: 12px;
+}
+
+.control-service-card > p {
+  font-size: 13px;
+}
+
+.control-service-card h3 {
+  font-size: 18px;
+}
+
+.control-section-title h2 {
+  font-size: 18px;
+}
+
+.control-diagnostics-grid button {
+  min-height: 68px;
+  font-size: 15px;
+  color: #aeb8c2;
+  opacity: 1;
+}
+
+.control-diagnostics-grid button:disabled {
+  opacity: 0.72;
+}
+
+.control-refresh {
+  font-size: 14px;
+}
+
+.control-status {
+  font-size: 13px;
+}
+
+/* =========================================================
+   SERVICE ACTION BUTTONS - FINAL
+   ========================================================= */
+
+.control-service-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+
+  width: 100%;
+  margin-top: 16px;
+}
+
+
+/* BOTH BUTTONS */
+.control-service-actions button {
+  width: 100%;
+  height: 52px;
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin: 0;
+  padding: 0 16px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.12s ease;
+}
+
+
+/* ICONS */
+.control-service-actions button svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+}
+
+
+/* =========================================================
+   STOP
+   ========================================================= */
+
+.control-service-stop {
+  background: rgba(255, 82, 92, 0.045);
+  border: 1px solid rgba(255, 92, 102, 0.30);
+
+  color: #ff737c;
+}
+
+.control-service-stop:hover:not(:disabled) {
+  background: rgba(255, 82, 92, 0.10);
+  border-color: rgba(255, 92, 102, 0.60);
+
+  color: #ff8c93;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESTART
+   ========================================================= */
+
+.control-service-restart {
+  background: rgba(94, 161, 255, 0.035);
+  border: 1px solid rgba(94, 161, 255, 0.22);
+
+  color: #9eb7d3;
+}
+
+.control-service-restart:hover:not(:disabled) {
+  background: rgba(94, 161, 255, 0.09);
+  border-color: rgba(94, 161, 255, 0.50);
+
+  color: #b8d4f2;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DISABLED
+   ========================================================= */
+
+.control-service-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+  transform: none;
+}
+
+
+/* =========================================================
+   ONLY ONE BUTTON
+   Dashboard service has restart only
+   ========================================================= */
+
+.control-service-actions > button:only-child {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   DIAGNOSTIC CONTROLS
+   ========================================================= */
+
+.control-diagnostics-grid button {
+  min-height: 58px;
+
+  border: 1px solid #263139;
+  border-radius: 8px;
+
+  background: rgba(15, 21, 25, 0.82);
+
+  color: #aebbc5;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.12s ease;
+}
+
+.control-diagnostics-grid button:hover:not(:disabled) {
+  background: rgba(26, 38, 43, 0.92);
+  border-color: rgba(99, 226, 151, 0.35);
+
+  color: #e5edf2;
+
+  transform: translateY(-1px);
+}
+
+.control-diagnostics-grid button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   DIAGNOSTIC RESULT
+   ========================================================= */
+
+.control-diagnostic-result {
+  margin-top: 18px;
+
+  overflow: hidden;
+
+  border: 1px solid #263139;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 22, 26, 0.97),
+      rgba(9, 15, 18, 0.97)
+    );
+}
+
+
+/* HEADER */
+
+.control-diagnostic-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #263139;
+}
+
+.control-diagnostic-result-header span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #71818c;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.control-diagnostic-result-header h3 {
+  margin: 0;
+
+  color: #edf3f5;
+
+  font-size: 18px;
+}
+
+
+/* OVERALL STATUS */
+
+.diagnostic-overall {
+  padding: 8px 12px;
+
+  border: 1px solid;
+  border-radius: 6px;
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.diagnostic-overall.healthy {
+  color: #5ee69a;
+  border-color: rgba(94, 230, 154, 0.3);
+  background: rgba(94, 230, 154, 0.06);
+}
+
+.diagnostic-overall.warning {
+  color: #e6bf5e;
+  border-color: rgba(230, 191, 94, 0.3);
+  background: rgba(230, 191, 94, 0.06);
+}
+
+.diagnostic-overall.error {
+  color: #ff737c;
+  border-color: rgba(255, 115, 124, 0.3);
+  background: rgba(255, 115, 124, 0.06);
+}
+
+
+/* ITEMS */
+
+.control-diagnostic-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-diagnostic-item {
+  display: grid;
+
+  grid-template-columns:
+    30px
+    minmax(180px, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 58px;
+
+  padding: 10px 20px;
+
+  border-bottom: 1px solid
+    rgba(38, 49, 57, 0.7);
+}
+
+.control-diagnostic-item:last-child {
+  border-bottom: 0;
+}
+
+
+/* STATUS ICON */
+
+.diagnostic-item-status span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 23px;
+  height: 23px;
+
+  border-radius: 50%;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.control-diagnostic-item.ok
+.diagnostic-item-status span {
+  color: #5ee69a;
+  background: rgba(94, 230, 154, 0.08);
+  border: 1px solid rgba(94, 230, 154, 0.25);
+}
+
+.control-diagnostic-item.warning
+.diagnostic-item-status span {
+  color: #e6bf5e;
+  background: rgba(230, 191, 94, 0.08);
+  border: 1px solid rgba(230, 191, 94, 0.25);
+}
+
+.control-diagnostic-item.error
+.diagnostic-item-status span {
+  color: #ff737c;
+  background: rgba(255, 115, 124, 0.08);
+  border: 1px solid rgba(255, 115, 124, 0.25);
+}
+
+
+/* TEXT */
+
+.diagnostic-item-copy {
+  min-width: 0;
+}
+
+.diagnostic-item-copy strong {
+  display: block;
+
+  color: #dce5e9;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.diagnostic-item-copy small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #71818c;
+
+  font-size: 11px;
+}
+
+.diagnostic-item-value {
+  color: #edf3f5;
+
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: right;
+}
+
+/* =========================================================
+   ACTIVE DIAGNOSTIC TAB
+   ========================================================= */
+
+.control-diagnostics-grid button.active {
+  color: #7cf0ad;
+
+  border-color:
+    rgba(92, 230, 154, 0.55);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(51, 180, 112, 0.12),
+      rgba(30, 110, 73, 0.08)
+    );
+
+  box-shadow:
+    0 0 0 1px
+      rgba(92, 230, 154, 0.08),
+    0 0 18px
+      rgba(92, 230, 154, 0.13),
+    inset 0 0 14px
+      rgba(92, 230, 154, 0.04);
+}
+
+.control-diagnostics-grid button.active:hover {
+  color: #8effbc;
+
+  border-color:
+    rgba(92, 230, 154, 0.72);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(51, 180, 112, 0.16),
+      rgba(30, 110, 73, 0.11)
+    );
+}
+
+/* =========================================================
+   SYSTEM POWER
+   ========================================================= */
+
+.control-power-section {
+  margin-top: 4px;
+}
+
+.control-power-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+
+/* =========================================================
+   POWER CARDS
+   ========================================================= */
+
+.control-power-card {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 100%;
+  min-height: 108px;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 20px 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 24, 30, 0.96),
+      rgba(11, 17, 21, 0.96)
+    );
+
+  border: 1px solid #26343c;
+  border-radius: 8px;
+
+  color: #e9f1f5;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+/* =========================================================
+   POWER ICON
+   ========================================================= */
+
+.control-power-icon {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: rgba(74, 169, 255, 0.08);
+  border: 1px solid rgba(74, 169, 255, 0.18);
+
+  color: #69b8ff;
+}
+
+
+/* =========================================================
+   POWER TEXT
+   ========================================================= */
+
+.control-power-card > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.control-power-card strong {
+  display: block;
+
+  color: #f2f6f8;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.control-power-card span {
+  display: block;
+
+  color: #81909a;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   RESTART
+   ========================================================= */
+
+.control-power-card.restart:hover {
+  border-color: rgba(74, 169, 255, 0.65);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 40, 52, 0.98),
+      rgba(11, 19, 25, 0.98)
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(74, 169, 255, 0.08),
+    0 0 24px rgba(74, 169, 255, 0.08);
+
+  transform: translateY(-1px);
+}
+
+.control-power-card.restart:hover .control-power-icon {
+  background: rgba(74, 169, 255, 0.13);
+  border-color: rgba(74, 169, 255, 0.4);
+}
+
+
+/* =========================================================
+   SHUTDOWN
+   ========================================================= */
+
+.control-power-card.shutdown {
+  border-color: rgba(255, 92, 104, 0.22);
+}
+
+.control-power-card.shutdown .control-power-icon {
+  color: #ff747e;
+
+  background: rgba(255, 75, 88, 0.07);
+  border-color: rgba(255, 75, 88, 0.18);
+}
+
+.control-power-card.shutdown:hover {
+  border-color: rgba(255, 92, 104, 0.65);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(46, 22, 27, 0.98),
+      rgba(20, 14, 17, 0.98)
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(255, 92, 104, 0.06),
+    0 0 24px rgba(255, 72, 88, 0.08);
+
+  transform: translateY(-1px);
+}
+
+.control-power-card.shutdown:hover .control-power-icon {
+  background: rgba(255, 75, 88, 0.12);
+  border-color: rgba(255, 75, 88, 0.4);
+}
+
+
+/* =========================================================
+   POWER CONFIRMATION MODAL
+   ========================================================= */
+
+.control-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(2, 7, 10, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.control-modal {
+  width: min(460px, 100%);
+
+  padding: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111a20,
+      #0b1115
+    );
+
+  border: 1px solid #2a3942;
+  border-radius: 10px;
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.55);
+
+  color: #edf4f7;
+}
+
+.control-modal-kicker {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #728693;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.control-modal h2 {
+  margin: 0 0 12px;
+
+  color: #f4f7f9;
+
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.control-modal p {
+  margin: 0;
+
+  color: #91a0aa;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.control-modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.control-modal-actions button {
+  appearance: none;
+  -webkit-appearance: none;
+
+  height: 44px;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.control-modal-cancel {
+  background: #11191e;
+  border: 1px solid #2b3941;
+
+  color: #aebbc3;
+}
+
+.control-modal-cancel:hover {
+  background: #172128;
+  border-color: #41515b;
+
+  color: #e2e9ed;
+}
+
+.control-modal-confirm {
+  background: rgba(55, 154, 255, 0.12);
+  border: 1px solid rgba(75, 169, 255, 0.45);
+
+  color: #75bdff;
+}
+
+.control-modal-confirm:hover {
+  background: rgba(55, 154, 255, 0.2);
+
+  border-color: #58adff;
+
+  box-shadow:
+    0 0 18px rgba(55, 154, 255, 0.1);
+}
+
+
+/* SHUTDOWN CONFIRM */
+
+.control-modal-confirm.danger {
+  background: rgba(255, 70, 84, 0.1);
+  border-color: rgba(255, 83, 96, 0.45);
+
+  color: #ff747e;
+}
+
+.control-modal-confirm.danger:hover {
+  background: rgba(255, 70, 84, 0.18);
+  border-color: #ff6570;
+
+  box-shadow:
+    0 0 18px rgba(255, 70, 84, 0.1);
+}
+
+
+/* =========================================================
+   POWER ERROR
+   ========================================================= */
+
+.control-power-error {
+  margin-top: 16px;
+  padding: 11px 13px;
+
+  background: rgba(255, 70, 84, 0.08);
+
+  border: 1px solid rgba(255, 70, 84, 0.3);
+  border-radius: 6px;
+
+  color: #ff7b84;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   DISABLED
+   ========================================================= */
+
+.control-modal button:disabled,
+.control-power-card:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .control-power-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================================================
+   NETWORK & SECURITY
+   ========================================================= */
+
+.control-network-section {
+  margin-top: 6px;
+}
+
+.control-network-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+.control-network-card {
+  padding: 18px;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.07);
+
+  border-radius: 9px;
+
+  background:
+    rgba(14, 20, 26, 0.82);
+}
+
+.control-network-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.control-network-card-top > span {
+  color: #6c7985;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.control-network-card-top strong {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.network-good {
+  color: #58df9a;
+}
+
+.network-warning {
+  color: #e6bd62;
+}
+
+.network-bad {
+  color: #ff727b;
+}
+
+.control-network-card h3 {
+  margin: 0 0 5px;
+
+  color: #edf3f6;
+
+  font-size: 16px;
+}
+
+.control-network-card p {
+  min-height: 34px;
+
+  margin: 0;
+
+  color: #77858f;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.control-network-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: 15px;
+  padding-top: 12px;
+
+  border-top:
+    1px solid
+      rgba(255,255,255,0.06);
+}
+
+.control-network-meta span {
+  color: #66747e;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+}
+
+.control-network-meta strong {
+  color: #9eabb4;
+
+  font-family: monospace;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LISTENING PORTS
+   ========================================================= */
+
+.control-ports-panel {
+  margin-top: 14px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.07);
+
+  border-radius: 9px;
+
+  background:
+    rgba(11, 17, 21, 0.88);
+}
+
+.control-ports-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 17px 19px;
+
+  border-bottom:
+    1px solid
+      rgba(255,255,255,0.07);
+}
+
+.control-ports-header span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #687681;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.control-ports-header h3 {
+  margin: 0;
+
+  color: #e6edf1;
+
+  font-size: 16px;
+}
+
+.control-ports-header > strong {
+  color: #58df9a;
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.control-port-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-port-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 1fr)
+    90px
+    120px;
+
+  align-items: center;
+
+  gap: 16px;
+
+  min-height: 52px;
+
+  padding: 9px 19px;
+
+  border-bottom:
+    1px solid
+      rgba(255,255,255,0.045);
+}
+
+.control-port-row:last-child {
+  border-bottom: 0;
+}
+
+.control-port-row > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-port-row > div strong {
+  color: #dce5ea;
+
+  font-size: 13px;
+}
+
+.control-port-row > div span {
+  color: #687681;
+
+  font-size: 10px;
+}
+
+.control-port-row code {
+  color: #b8c6cf;
+
+  font-size: 12px;
+
+  text-align: right;
+}
+
+.control-port-status {
+  color: #58df9a;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .control-network-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .control-network-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-port-row {
+    grid-template-columns:
+      1fr auto;
+  }
+
+  .control-port-status {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+}
+
+/* =========================================================
+   PUSH NOTIFICATIONS
+   ========================================================= */
+
+.control-push-panel {
+  padding: 20px;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.07);
+
+  border-radius: 10px;
+
+  background:
+    rgba(11, 17, 21, 0.88);
+}
+
+
+.control-push-status-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+}
+
+
+.control-push-status {
+  min-height: 82px;
+
+  padding: 15px;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.055);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255,255,255,0.025);
+}
+
+
+.control-push-status span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #66747e;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+}
+
+
+.control-push-status strong {
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+
+.push-good {
+  color: #58df9a;
+}
+
+
+.push-bad {
+  color: #ff727b;
+}
+
+
+.push-idle {
+  color: #e6bd62;
+}
+
+
+.push-count {
+  color: #dce5ea;
+  font-family: monospace;
+  font-size: 18px !important;
+}
+
+
+.control-push-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 16px;
+}
+
+
+.control-push-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 40px;
+
+  padding:
+    0
+    16px;
+
+  border:
+    1px solid
+      rgba(255,255,255,0.08);
+
+  border-radius: 8px;
+
+  color: #dce5ea;
+
+  background:
+    rgba(255,255,255,0.045);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+
+.control-push-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  border-color:
+    rgba(255,255,255,0.15);
+
+  background:
+    rgba(255,255,255,0.07);
+}
+
+
+.control-push-button.primary {
+  color: #58df9a;
+
+  border-color:
+    rgba(88,223,154,0.2);
+
+  background:
+    rgba(88,223,154,0.08);
+}
+
+
+.control-push-button.test {
+  color: #9bc9ff;
+
+  border-color:
+    rgba(100,175,255,0.18);
+
+  background:
+    rgba(100,175,255,0.07);
+}
+
+
+.control-push-button.secondary {
+  color: #c5cdd2;
+}
+
+
+.control-push-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+
+.control-push-message {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 14px;
+
+  padding:
+    10px
+    12px;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+.control-push-message.success {
+  color: #58df9a;
+
+  background:
+    rgba(88,223,154,0.07);
+}
+
+
+.control-push-message.error {
+  color: #ff727b;
+
+  background:
+    rgba(255,114,123,0.07);
+}
+
+
+.control-push-note {
+  margin:
+    15px
+    0
+    0;
+
+  color: #66747e;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+@media (max-width: 900px) {
+
+  .control-push-status-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .control-push-status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-push-actions {
+    flex-direction: column;
+  }
+
+  .control-push-button {
+    width: 100%;
+  }
+
+}
+
