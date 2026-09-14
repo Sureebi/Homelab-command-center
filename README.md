@@ -2,6 +2,8 @@
 
 SureePi is a React + Vite dashboard for monitoring a self-hosted homelab node. This repository is a safe portfolio/demo version of the original dashboard: it keeps the frontend experience, but replaces the private backend with realistic mock data.
 
+![SureePi dashboard overview](public/dashboard_main.png)
+
 ## What It Shows
 
 - Live-style system telemetry for CPU, memory, storage and temperature
@@ -12,6 +14,20 @@ SureePi is a React + Vite dashboard for monitoring a self-hosted homelab node. T
 - Minecraft server status and console-style controls
 - Admin control panel UI with simulated actions
 - PWA-ready configuration
+
+## Preview
+
+| Control Center | System Console |
+| --- | --- |
+| ![Control center](public/ControlCenter.png) | ![Neofetch-style system console](public/NeofetchConsole.png) |
+
+| Docker | Minecraft |
+| --- | --- |
+| ![Docker containers page](public/docker_page.png) | ![Minecraft game server panel](public/Gameserver_panel.png) |
+
+| Storage | Additional Node |
+| --- | --- |
+| ![Storage partition section](public/partition_sectioni.png) | ![Additional server page](public/Additional_server.png) |
 
 ## Demo Safety
 
