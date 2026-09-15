@@ -11,7 +11,7 @@ SureePi is a React + Vite dashboard for monitoring a self-hosted homelab node. T
 - Storage activity and event log views
 - Raspberry Pi system details
 - Secondary Dell node status
-- Minecraft server status and console-style controls
+- Game server status and console-style controls
 - Admin control panel UI with simulated actions
 - PWA-ready configuration
 
@@ -21,9 +21,9 @@ SureePi is a React + Vite dashboard for monitoring a self-hosted homelab node. T
 | --- | --- |
 | ![Control center](public/ControlCenter.png) | ![Neofetch-style system console](public/NeofetchConsole.png) |
 
-| Docker | Minecraft |
+| Docker | Game Server |
 | --- | --- |
-| ![Docker containers page](public/docker_page.png) | ![Minecraft game server panel](public/Gameserver_panel.png) |
+| ![Docker containers page](public/docker_page.png) | ![Game server panel](public/Gameserver_panel.png) |
 
 | Storage | Additional Node |
 | --- | --- |
@@ -33,7 +33,7 @@ SureePi is a React + Vite dashboard for monitoring a self-hosted homelab node. T
 
 The real dashboard runs against a private backend on a home server. This public version does not include that backend, any databases, credentials, private IP configuration, or real control access.
 
-All `/api/*` requests are intercepted in the browser by `src/demo/mockApi.js`, which returns demo data and simulated success responses. Buttons such as service restart, power actions and Minecraft controls do not touch any real infrastructure.
+All `/api/*` requests are intercepted in the browser by `src/demo/mockApi.js`, which returns demo data and simulated success responses. Buttons such as service restart, power actions and server controls do not touch any real infrastructure.
 
 ## Tech Stack
 
